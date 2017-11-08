@@ -17,4 +17,26 @@ print(pattern())
 
 # de aici incepe un fel de main
 
-x = input()
+def sch(word):
+    PATTERN = pattern()
+    line_count = 1
+
+    text = ''
+    for line in stdin:
+        text += line
+    print(text)
+    
+    text = re.findall(text);
+
+    for line in stdin:
+        print("line is: " + line)
+        for pat in PATTERN:
+            x = re.match('[!?.]([a-z ,;]*)=([a-z ,;]*)[!?.]', line)#.match
+            if(x is not None and word.lower() in x.group(1).lower()):
+                print("g1: "+x.group(1))
+                print("Definition : " + x.group(2))
+                print("found at line no:" + str(line_count))
+            print(x)
+        line_count += 1
+
+sch("tata")
