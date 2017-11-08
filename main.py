@@ -6,7 +6,7 @@ def pattern():
 	i=0
 	L=[]
 	for pattern in e.findall('pattern'):
-		L.append(pattern.text)
+		L.append(pattern.text.lower())
 		i=i+1
 	return L
 	
