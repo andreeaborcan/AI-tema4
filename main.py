@@ -17,26 +17,40 @@ print(pattern())
 
 # de aici incepe un fel de main
 
-def sch(word):
-    PATTERN = pattern()
-    line_count = 1
 
+
+def sch(word, file_name):
+    word=word.lower()
+    patterns = pattern()
+    line_count = 1
+    """
     text = ''
     for line in stdin:
-        text += line
+        text += line[0:-1]
     print(text)
-    
-    text = re.findall(text);
 
-    for line in stdin:
-        print("line is: " + line)
-        for pat in PATTERN:
-            x = re.match('[!?.]([a-z ,;]*)=([a-z ,;]*)[!?.]', line)#.match
-            if(x is not None and word.lower() in x.group(1).lower()):
-                print("g1: "+x.group(1))
-                print("Definition : " + x.group(2))
-                print("found at line no:" + str(line_count))
-            print(x)
-        line_count += 1
+    text = re.sub('[.?!]+', '$', text);
+    text = text.split('$');
+    print(text)
+    """
+    pos = 0
+    with open(file_name, 'r') as input_file:
+        for line in input_file:
+            line = line.lower()
+            line = re.sub('[.?!]+', '$', line)
+            line = line.split('$')
+            for sentence in line:
+                for pat in patterns:
+                    #print(sentence)
+                    x = re.match('([-a-z0-9 ,;]*)('+pat+')([-a-z0-9 ,;]*)', sentence)#.match
+                    #if x is not None:
+                    #print(x.groups())
+                    if(x is not None and word.lower() in x.group(1).lower()):
+                        print("Found:            \"" + sentence+"\"")
+                        print("Definition:       \""+x.group(3)+"")
+                        print("found at line no: " + str(line_count))
+                        #print("g1: "+x.group(1))
+                    #print(x)
+            line_count += 1
 
-sch("tata")
+sch("tata", "in")
