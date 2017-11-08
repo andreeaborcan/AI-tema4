@@ -18,7 +18,6 @@ print(pattern())
 # de aici incepe un fel de main
 
 
-
 def sch(word, file_name):
     word=word.lower()
     patterns = pattern()
@@ -53,4 +52,9 @@ def sch(word, file_name):
                     #print(x)
             line_count += 1
 
-sch("tata", "in")
+
+while(True):
+	print("ce definitie cauti?")
+	x = input()
+	sch(x, "text")
+
