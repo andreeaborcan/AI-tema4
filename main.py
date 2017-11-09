@@ -42,22 +42,23 @@ def sch(word, file_name):
             for sentence in line:
                 for pat in patterns:
                     #print(sentence)
-                    x = re.match('([-a-z0-9 ,;]*)([ ,]'+pat+')([-a-z0-9 ,;]*)', sentence)#.match
+                    x = re.match('([-a-z0-9 ,;()]*)([ ,]'+pat+')([-a-z0-9 ,;]*)', sentence)#.match
                     #if x is not None:
                     #print(x.groups())
                     if(x is not None and word.lower() in x.group(1).lower()):
                         print("Found:            \"" + sentence+"\"")
-                        print("Definition:       \""+x.group(3)+"")
+                        print("Definition:       \""+x.group(3)+'\"')
                         print("found at line no: " + str(line_count))
                         #print("g1: "+x.group(1))
                     #print(x)
+            
             line_count += 1
 
 
 while(True):
 	print("ce definitie cauti?")
 	x = input()
-	sch(x, "text2")
+	sch(x, "text")
 
 
 
