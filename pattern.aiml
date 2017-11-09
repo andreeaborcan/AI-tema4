@@ -1,0 +1,22 @@
+
+<aiml>	
+	
+	  
+		    <pattern>este definit </pattern>
+		    <pattern>sunt </pattern>
+		    <pattern>este </pattern>
+		    <pattern>reprezinta </pattern>
+		    <pattern>constituie </pattern>
+		    <pattern>=</pattern>
+		    <pattern>este reprezentat </pattern>
+		    <pattern>se defineste </pattern>
+		    <pattern>numim </pattern>
+		    <pattern>putem inlocui </pattern>
+		    <pattern>inseamna </pattern>
+		    <pattern>este considerat </pattern>
+		    <pattern>se considera </pattern>
+		    <pattern>--</pattern>
+		    <pattern>este determinat </pattern>
+		   	<pattern>constituind </pattern>
+		
+</aiml>
