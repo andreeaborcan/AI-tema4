@@ -42,7 +42,7 @@ def sch(word, file_name):
             for sentence in line:
                 for pat in patterns:
                     #print(sentence)
-                    x = re.match('([-a-z0-9 ,;]*)('+pat+')([-a-z0-9 ,;]*)', sentence)#.match
+                    x = re.match('([-a-z0-9 ,;]*)([ ,]'+pat+')([-a-z0-9 ,;]*)', sentence)#.match
                     #if x is not None:
                     #print(x.groups())
                     if(x is not None and word.lower() in x.group(1).lower()):
@@ -57,5 +57,7 @@ def sch(word, file_name):
 while(True):
 	print("ce definitie cauti?")
 	x = input()
-	sch(x, "text")
+	sch(x, "text2")
+
+
 
